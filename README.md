@@ -15,7 +15,7 @@ The following services are provided in the workspace:
 
 ## Getting Started
 1.  Make a copy of the analytics workspace project\
-Open a terminal window and change to the directory where the workspace is to be created.
+Open a terminal window and change to the directory where the project is to be created.
 ```
 # cd to the directory where the workplace will be created
 git clone https://github.com/datwiz/analytics-workspace.git workspace
@@ -34,9 +34,11 @@ Refer to [Accessing Services](#access) for details on accessing the services.
 
 ## About the workspace
 ### directories
-* `${WORKSPACE_ROOT_DIR}/data/postgresql/data`     postgresql database data
-* `${WORKSPACE_ROOT_DIR}/data/postgresql/pgadmin`  pgadmin config and session data
+* `${SRC_ROOT_DIR}/data/postgresql/data`     postgresql database data
+* `${SRC_ROOT_DIR}/data/postgresql/pgadmin`  pgadmin config and session data
 * `${WORKSPACE_ROOT_DIR}/notebooks`                jupyter notebooks and lab config and notebook data
+
+Notice that the `Jupyter notebook` root directory will be the one from which you invoke `wsctl start`. This means you can always change to another location in your directory tree and invoke `wsctl start` from there, as for example, `~/work/analytics/bin/wsctl start`.
 
 ### docker images
 The docker images are pegged to the version tags current as of 16-Apr-18.  To use different docker

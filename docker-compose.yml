@@ -12,7 +12,7 @@ services:
       CHOWN_HOME: "yes"
       GRANT_SUDO: "yes"
     volumes:
-    - ${WORKSPACE_ROOT_DIR}/notebooks:/home/${USER}
+    - ${WORKSPACE_ROOT_DIR}:/home/${USER}
     ports:
     - "8888:8888"
 
@@ -24,7 +24,7 @@ services:
       POSTGRES_PASSWORD: "password"
       POSTGRES_DB: "datalab"
     volumes:
-      - ${WORKSPACE_ROOT_DIR}/data/postgresql/data:/var/lib/postgresql/data
+      - ${SRC_ROOT_DIR}/data/postgresql/data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
@@ -35,6 +35,6 @@ services:
       PGADMIN_DEFAULT_EMAIL: "${USER}"
       PGADMIN_DEFAULT_PASSWORD: "password"
     volumes:
-    - ${WORKSPACE_ROOT_DIR}/data/postgresql/pgadmin:/var/lib/pgadmin
+    - ${SRC_ROOT_DIR}/data/postgresql/pgadmin:/var/lib/pgadmin
     ports:
       - "8080:80"
